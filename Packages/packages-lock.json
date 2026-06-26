@@ -1,5 +1,33 @@
 {
   "dependencies": {
+    "com.mgs.assistant": {
+      "version": "https://github.com/mogoson/MGS.Assistant.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "735585cde64c0fa0bb93ef59b62f402141ed861e"
+    },
+    "com.mgs.ioutility": {
+      "version": "https://github.com/mogoson/MGS.IOUtility.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "89c959ee83148a54dd3eeb455bf1e44b9afa6519"
+    },
+    "com.mgs.streamingio": {
+      "version": "https://github.com/mogoson/MGS.StreamingIO.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ea93b9dddc39f9a38e2780ccca3e02b812f4adcc"
+    },
+    "com.mgs.streamingporter": {
+      "version": "https://github.com/mogoson/MGS.StreamingPorter.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "05e0502143f8ad015b4efac70d6a0e3b2da30541"
+    },
     "com.unity.collab-proxy": {
       "version": "2.3.1",
       "depth": 0,
@@ -34,6 +62,13 @@
     },
     "com.unity.ide.vscode": {
       "version": "1.2.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

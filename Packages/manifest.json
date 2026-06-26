@@ -1,9 +1,14 @@
 {
   "dependencies": {
+    "com.mgs.assistant": "https://github.com/mogoson/MGS.Assistant.git?path=/Assets",
+    "com.mgs.ioutility": "https://github.com/mogoson/MGS.IOUtility.git?path=/Assets",
+    "com.mgs.streamingio": "https://github.com/mogoson/MGS.StreamingIO.git?path=/Assets",
+    "com.mgs.streamingporter": "https://github.com/mogoson/MGS.StreamingPorter.git?path=/Assets",
     "com.unity.collab-proxy": "2.3.1",
     "com.unity.ide.rider": "3.0.28",
     "com.unity.ide.visualstudio": "2.0.22",
     "com.unity.ide.vscode": "1.2.5",
+    "com.unity.nuget.newtonsoft-json": "3.2.2",
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.5",
