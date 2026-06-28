@@ -1,0 +1,18 @@
+{
+    "name": "Business.Launch",
+    "rootNamespace": "Business.Launch",
+    "references": [
+        "GUID:86c2f7119515d704ca970aa2fe0133f3",
+        "GUID:b90bc219fc65f1f4dac3601984a54650",
+        "GUID:ad01ce42dc850bc4ba9786137ea4ad2a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
