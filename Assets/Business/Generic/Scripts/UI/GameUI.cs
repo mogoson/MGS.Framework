@@ -11,24 +11,18 @@
  *************************************************************************/
 
 using System;
+using MGS.Singleton;
 using UnityEngine;
 
 namespace Business.Generic
 {
-    public class GameUI : MonoBehaviour
+    public class GameUI : MonoSingleton<GameUI>
     {
         [SerializeField] LoadingUI loadingUI;
         [SerializeField] DialogUI dialogUI;
 
-        #region Instance
-        public static GameUI Instance { private set; get; }
-
+        #region Life Cycle
         void Awake()
-        {
-            Instance = this;
-        }
-
-        void Start()
         {
             SubscribeAppMessage();
             SubscribeSceneMessage();

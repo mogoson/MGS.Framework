@@ -20,6 +20,12 @@ namespace Business.Generic
 {
     public static class GameData
     {
+        public static PlayerData PlayerData { get; }
+
+        public static GameConfig GameConfig { get; }
+
+        public static IJsonAvatar<PlayerConfig> PlayerConfig { get; }
+
         static GameData()
         {
             PlayerData = new PlayerData();
@@ -27,15 +33,7 @@ namespace Business.Generic
             PlayerConfig = new JsonAvatar<PlayerConfig>(GetConfigFile("PlayerConfig.json"));
         }
 
-        #region Runtime Data
-        public static PlayerData PlayerData { get; }
-        #endregion
-
-        #region Config Data
-        public static GameConfig GameConfig { get; }
-
-        public static IJsonAvatar<PlayerConfig> PlayerConfig { get; }
-
+        #region Config
         public static string GetConfigFile(string fileName)
         {
             return StreamingPorter.GetDestPath($"Config/{fileName}");

@@ -14,7 +14,7 @@ using System;
 
 namespace Business.Generic
 {
-    public interface IBusinessSceneManager
+    public interface IBusinessSceneManager : IDisposable
     {
         BusinessScene Scene { get; }
 

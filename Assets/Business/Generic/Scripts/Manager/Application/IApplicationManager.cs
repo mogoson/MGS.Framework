@@ -10,9 +10,11 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using System;
+
 namespace Business.Generic
 {
-    public interface IApplicationManager
+    public interface IApplicationManager : IDisposable
     {
         void AskQuit();
 

@@ -49,7 +49,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "33dd658d43c9052624f7823d6438803d4810d1b2"
+      "hash": "ae5b588dbb1fb3d2201543730cc2df6567d63e0c"
     },
     "com.mgs.streamingio": {
       "version": "https://github.com/mogoson/MGS.StreamingIO.git?path=/Assets",
