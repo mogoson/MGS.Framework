@@ -40,6 +40,8 @@ Framework template for Unity app.
 - MonoAgent, Provide an instance of MonoBehaviour in normal C# Class.
 - CoroutineAgent, Provide generic routine and start coroutine.
 - RoutineAgent, Provide generic routine.
+- ApplicationAgent, Listener Application Focus/Pause/Quit.
+- MainThreadAgent, Enqueue action and invoke by main thread.
 
 ###  MGS.MonoCollection
 

@@ -35,7 +35,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "215fdc68a181123ba087e41f3c80496360c505ca"
+      "hash": "7c2b27dd6705ad0db920723edc59fe5ebbc5c775"
     },
     "com.mgs.monocollection": {
       "version": "https://github.com/mogoson/MGS.MonoCollection.git?path=/Assets",
