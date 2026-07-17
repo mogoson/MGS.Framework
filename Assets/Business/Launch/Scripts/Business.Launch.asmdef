@@ -3,7 +3,6 @@
     "rootNamespace": "Business.Launch",
     "references": [
         "GUID:1c77229e5507d6840910660475fd8624",
-        "GUID:2d44388a014d8ef47b7fd7b83e1023f5",
         "GUID:86c2f7119515d704ca970aa2fe0133f3",
         "GUID:b90bc219fc65f1f4dac3601984a54650",
         "GUID:ad01ce42dc850bc4ba9786137ea4ad2a",

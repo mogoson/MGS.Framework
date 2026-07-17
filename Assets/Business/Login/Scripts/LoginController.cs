@@ -24,7 +24,6 @@ namespace Business.Login
 
         LoginUI loginUI;
         LoadingUI loadingUI;
-        string userName;
 
         private void Start()
         {
@@ -37,8 +36,6 @@ namespace Business.Login
 
         void OnLogin(string userName, string password)
         {
-            this.userName = userName;
-
             loadingUI = GameManager.UIManager.CreateIfNotFind<LoadingUI>();
             loadingUI.Refresh("Login...");
             loadingUI.Show();
@@ -52,14 +49,7 @@ namespace Business.Login
             if (error == null)
             {
                 loginUI.Close();
-
-                //If remember.
-                if (GameData.PlayerConfig.Data.userName != userName)
-                {
-                    GameData.PlayerConfig.Data.userName = userName;
-                    GameData.PlayerConfig.Push();
-                }
-                GameManager.SceneManager.EnterScene(BusinessScene.Lobby);
+                business.LoginFinish(loginUI.Remember);
             }
         }
     }

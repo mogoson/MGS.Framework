@@ -1,21 +1,34 @@
 /*************************************************************************
  *  Copyright © 2026 Mogoson All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  MainUI.cs
+ *  File         :  LobbyBusinees.cs
  *  Description  :  Default.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  1.0.0
- *  Date         :  06/13/2026
+ *  Date         :  07/18/2026
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using System;
+using Business.Generic;
 using UnityEngine;
 
-namespace Business.Main
+namespace Business.Lobby
 {
-    public class MainUI : MonoBehaviour
+    enum RoomName
     {
-        [SerializeField] MainManager manager;
+        MovieRoom,
+        MusicRoom,
+        PaintingRoom
+    }
+
+    class LobbyBusinees : MonoBehaviour
+    {
+        public void EnterRoom(RoomName roomName)
+        {
+            var scene = Enum.Parse<BusinessScene>(roomName.ToString());
+            GameManager.SceneManager.EnterSceneAsync(scene);
+        }
     }
 }

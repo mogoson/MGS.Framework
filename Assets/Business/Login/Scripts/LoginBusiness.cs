@@ -23,7 +23,7 @@ namespace Business.Login
         {
             IEnumerator LoginSample(Action<Exception> finished)
             {
-                yield return new WaitForSeconds(3.0f);
+                yield return new WaitForSeconds(1.0f);
                 finished?.Invoke(null);
             }
             StartCoroutine(LoginSample(OnLoginFinish));
@@ -36,6 +36,19 @@ namespace Business.Login
                 }
                 finished?.Invoke(error);
             }
+        }
+
+        public void LoginFinish(bool remember)
+        {
+            if (remember)
+            {
+                if (GameData.PlayerConfig.Data.userName != GameData.PlayerData.UserName)
+                {
+                    GameData.PlayerConfig.Data.userName = GameData.PlayerData.UserName;
+                    GameData.PlayerConfig.Push();
+                }
+            }
+            GameManager.SceneManager.EnterSceneAsync(BusinessScene.Lobby);
         }
 
         void OnLoginSucceed(string userName)

@@ -26,7 +26,7 @@ namespace Business.Generic
 
         BusinessSceneManager() { }
 
-        public void EnterScene(BusinessScene scene, Action<Exception> finished = null)
+        public void EnterSceneAsync(BusinessScene scene, Action<Exception> finished = null)
         {
             if (scene == Scene)
             {
@@ -40,10 +40,10 @@ namespace Business.Generic
                 return;
             }
 
-            coroutine = FrameworkEntry.Coroutine.StartCoroutine(EnterSceneAsync(scene, finished));
+            coroutine = FrameworkEntry.Coroutine.StartCoroutine(EnterSceneRoutine(scene, finished));
         }
 
-        IEnumerator EnterSceneAsync(BusinessScene scene, Action<Exception> finished = null)
+        IEnumerator EnterSceneRoutine(BusinessScene scene, Action<Exception> finished = null)
         {
             FrameworkEntry.MessageBus.Spread(new EnterSceneStartMessage { scene = scene });
             if (Scene != BusinessScene.Launch)

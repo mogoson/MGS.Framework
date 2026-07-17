@@ -10,16 +10,18 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using Business.Generic;
 using Framework;
+using UnityEngine;
 using UnityEngine.UI;
 
-namespace Business.Generic
+namespace Business.Launch
 {
-    public class SystemUI : BaseUI
+    class SystemUI : BaseUI
     {
-        public Button btnBack;
-        public Button btnLogout;
-        public Button btnQuit;
+        [SerializeField] Button btnLobby;
+        [SerializeField] Button btnLogout;
+        [SerializeField] Button btnQuit;
 
         protected override void Awake()
         {
@@ -27,14 +29,14 @@ namespace Business.Generic
 
             FrameworkEntry.MessageBus.Subscribe<EnterSceneStartMessage>(OnEnterSceneStart);
 
-            btnBack.onClick.AddListener(OnBtnBackClick);
+            btnLobby.onClick.AddListener(OnBtnBackClick);
             btnLogout.onClick.AddListener(OnBtnLogoutClick);
             btnQuit.onClick.AddListener(OnBtnQuitClick);
         }
 
         private void Start()
         {
-            btnBack.gameObject.SetActive(false);
+            btnLobby.gameObject.SetActive(false);
             btnLogout.gameObject.SetActive(false);
         }
 
@@ -45,22 +47,29 @@ namespace Business.Generic
 
         void OnEnterSceneStart(EnterSceneStartMessage message)
         {
-            var isCanBack = message.scene > BusinessScene.Lobby;
-            btnBack.gameObject.SetActive(isCanBack);
+            var isCanBackLobby = message.scene > BusinessScene.Lobby;
+            btnLobby.gameObject.SetActive(isCanBackLobby);
+
+            var isCanLogout = message.scene > BusinessScene.Login;
+            btnLogout.gameObject.SetActive(isCanLogout);
         }
 
         void OnBtnBackClick()
         {
-            var scene = GameManager.SceneManager.Scene - 1;
-            if (scene > BusinessScene.Lobby)
-            {
-                GameManager.SceneManager.EnterScene(scene);
-            }
+            GameManager.SceneManager.EnterSceneAsync(BusinessScene.Lobby);
         }
 
         void OnBtnLogoutClick()
         {
-            GameManager.SceneManager.EnterScene(BusinessScene.Login);
+            var dialogUI = GameManager.UIManager.CreateIfNotFind<DialogUI>();
+            dialogUI.Refresh("Logout", "Are you sure logout?", "Yes", "Cancel", isYes =>
+            {
+                if (isYes)
+                {
+                    GameManager.SceneManager.EnterSceneAsync(BusinessScene.Login);
+                }
+            });
+            dialogUI.Show();
         }
 
         void OnBtnQuitClick()

@@ -18,6 +18,6 @@ namespace Business.Generic
     {
         BusinessScene Scene { get; }
 
-        void EnterScene(BusinessScene scene, Action<Exception> finished = null);
+        void EnterSceneAsync(BusinessScene scene, Action<Exception> finished = null);
     }
 }

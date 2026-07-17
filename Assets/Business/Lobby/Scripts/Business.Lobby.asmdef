@@ -1,8 +1,10 @@
 {
-    "name": "Business.Main",
-    "rootNamespace": "Business.Main",
+    "name": "Business.Lobby",
+    "rootNamespace": "Business.Lobby",
     "references": [
-        "GUID:86c2f7119515d704ca970aa2fe0133f3"
+        "GUID:1c77229e5507d6840910660475fd8624",
+        "GUID:86c2f7119515d704ca970aa2fe0133f3",
+        "GUID:71a7b8d5c3765d64bb92fc7f44ae2bac"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

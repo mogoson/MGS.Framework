@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Business/Login/Login.unity
     guid: fd4af8d6d5e23b0489dba6a92d8d44f9
   - enabled: 1
-    path: Assets/Business/Main/Main.unity
-    guid: af5017d8cb818124da9d0d87268ef8c3
+    path: Assets/Business/Lobby/Lobby.unity
+    guid: 07342a5ca26451e41bc424d4f11d2e63
+  - enabled: 1
+    path: Assets/Business/Room/MovieRoom/MovieRoom.unity
+    guid: 3bd416f14d35d4b418b33276e65b4fb1
+  - enabled: 1
+    path: Assets/Business/Room/MusicRoom/MusicRoom.unity
+    guid: b0c6ce8e7dae3a64189ffc181ec5b877
+  - enabled: 1
+    path: Assets/Business/Room/PaintingRoom/PaintingRoom.unity
+    guid: 33a1875ca58cf614d8df249befd32873
   m_configObjects: {}

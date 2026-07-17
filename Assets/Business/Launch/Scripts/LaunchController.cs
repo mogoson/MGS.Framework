@@ -38,7 +38,7 @@ namespace Business.Launch
                 Destroy(gameObject);
 
                 GameManager.UIManager.CreateIfNotFind<SystemUI>();
-                GameManager.SceneManager.EnterScene(BusinessScene.Login);
+                business.LaunchFinish();
             }
             else
             {

@@ -11,19 +11,20 @@
  *************************************************************************/
 
 using System;
-using MGS.MonoUI;
+using Business.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Business.Login
 {
-    class LoginUI : MonoUI
+    class LoginUI : BaseUI
     {
         [SerializeField] InputField iptUser;
         [SerializeField] InputField iptPwd;
         [SerializeField] Button btnLogin;
         [SerializeField] Text texMsg;
 
+        public bool Remember { get { return true; } }
         public event Action<string, string> OnLoginEvent;
 
         protected override void Awake()

@@ -11,6 +11,7 @@
  *************************************************************************/
 
 using System;
+using Business.Generic;
 using MGS.StreamingPorter;
 using UnityEngine;
 
@@ -23,6 +24,11 @@ namespace Business.Launch
             TransportAsync(finished);
 
             //Do more things...
+        }
+
+        public void LaunchFinish()
+        {
+            GameManager.SceneManager.EnterSceneAsync(BusinessScene.Login);
         }
 
         #region Transport
