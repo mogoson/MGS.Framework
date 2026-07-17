@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.mgs.adaptive": {
+      "version": "https://github.com/mogoson/MGS.Adaptive.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e1e7c75f57beaf91786a846ed7f7afcb5b8cbe0e"
+    },
     "com.mgs.assistant": {
       "version": "https://github.com/mogoson/MGS.Assistant.git?path=/Assets",
       "depth": 0,
@@ -21,7 +28,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.2.2"
       },
-      "hash": "0bef0c2d64f989bd025f42590e8263ada612a702"
+      "hash": "d276217f6ac4a8ac37487ab3c5fb480cd0ad55a5"
     },
     "com.mgs.messagebus": {
       "version": "https://github.com/mogoson/MGS.MessageBus.git?path=/Assets",
@@ -35,7 +42,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "7c2b27dd6705ad0db920723edc59fe5ebbc5c775"
+      "hash": "7cf23e92c6d0c45a0539a2b3cc6c65d854f650f3"
     },
     "com.mgs.monocollection": {
       "version": "https://github.com/mogoson/MGS.MonoCollection.git?path=/Assets",
@@ -43,6 +50,13 @@
       "source": "git",
       "dependencies": {},
       "hash": "1f014cdf8fd5eb53f61fa02b5bbde86e86a52eec"
+    },
+    "com.mgs.monoui": {
+      "version": "https://github.com/mogoson/MGS.MonoUI.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ec12a1cd120eb1ecc07281ad9a35d2c53fa901e3"
     },
     "com.mgs.singleton": {
       "version": "https://github.com/mogoson/MGS.Singleton.git?path=/Assets",
@@ -56,14 +70,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "ea93b9dddc39f9a38e2780ccca3e02b812f4adcc"
+      "hash": "730c8cca75180e67ac5074a1ec3fa48af2e35eac"
     },
     "com.mgs.streamingporter": {
       "version": "https://github.com/mogoson/MGS.StreamingPorter.git?path=/Assets",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "5625ecf85add3319714712b7bafd5f1c137034e1"
+      "hash": "96e7b69e7f85e47458f22226e3d8535f400a71c7"
     },
     "com.unity.collab-proxy": {
       "version": "2.3.1",

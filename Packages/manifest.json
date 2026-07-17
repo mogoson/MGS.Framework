@@ -1,11 +1,13 @@
 {
   "dependencies": {
+    "com.mgs.adaptive": "https://github.com/mogoson/MGS.Adaptive.git?path=/Assets",
     "com.mgs.assistant": "https://github.com/mogoson/MGS.Assistant.git?path=/Assets",
     "com.mgs.ioutility": "https://github.com/mogoson/MGS.IOUtility.git?path=/Assets",
     "com.mgs.jsonavatar": "https://github.com/mogoson/MGS.JsonAvatar.git?path=/Assets",
     "com.mgs.messagebus": "https://github.com/mogoson/MGS.MessageBus.git?path=/Assets",
     "com.mgs.monoagent": "https://github.com/mogoson/MGS.MonoAgent.git?path=/Assets",
     "com.mgs.monocollection": "https://github.com/mogoson/MGS.MonoCollection.git?path=/Assets",
+    "com.mgs.monoui": "https://github.com/mogoson/MGS.MonoUI.git?path=/Assets",
     "com.mgs.singleton": "https://github.com/mogoson/MGS.Singleton.git?path=/Assets",
     "com.mgs.streamingio": "https://github.com/mogoson/MGS.StreamingIO.git?path=/Assets",
     "com.mgs.streamingporter": "https://github.com/mogoson/MGS.StreamingPorter.git?path=/Assets",
