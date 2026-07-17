@@ -11,52 +11,25 @@
  *************************************************************************/
 
 using System;
-using Business.Generic;
+using MGS.MonoUI;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Business.Login
 {
-    public class LoginUI : MonoBehaviour
+    class LoginUI : MonoUI
     {
-        [SerializeField] LoginManager manager;
-
-        [Space]
         [SerializeField] InputField iptUser;
         [SerializeField] InputField iptPwd;
-
-        [Space]
-        [SerializeField] Button btnClear;
-        [SerializeField] Toggle togRemember;
-        [SerializeField] Button btnForget;
-
-        [Space]
         [SerializeField] Button btnLogin;
         [SerializeField] Text texMsg;
 
-        private void Awake()
+        public event Action<string, string> OnLoginEvent;
+
+        protected override void Awake()
         {
-            btnClear?.onClick.AddListener(OnBtnClearClick);
-            btnForget?.onClick.AddListener(OnBtnForgetClick);
+            base.Awake();
             btnLogin.onClick.AddListener(OnBtnLoginClick);
-        }
-
-        private void Start()
-        {
-            var account = manager.GetAccountConfig();
-            SetAccountInput(account.username, account.password);
-        }
-
-        void OnBtnClearClick()
-        {
-            SetAccountInput(string.Empty, string.Empty);
-        }
-
-        void OnBtnForgetClick()
-        {
-            togRemember.isOn = false;
-            SetAccountInput(string.Empty, string.Empty);
-            manager.SetAccountConfig(null, null);
         }
 
         void OnBtnLoginClick()
@@ -76,47 +49,27 @@ namespace Business.Login
             StartLogin();
         }
 
-        void SetAccountInput(string username, string password)
+        void StartLogin()
+        {
+            btnLogin.interactable = false;
+            texMsg.text = string.Empty;
+            OnLoginEvent?.Invoke(iptUser.text, iptPwd.text);
+        }
+
+        public void SetInput(string username, string password)
         {
             iptUser.text = username;
             iptPwd.text = password;
         }
 
-        void StartLogin()
+        public void OnLoginResult(Exception error)
         {
-            btnLogin.interactable = false;
-            texMsg.text = string.Empty;
-
-            GameUI.Instance.ShowLoadingUI("Login...");
-            manager.Login(iptUser.text, iptPwd.text, OnLoginFinished);
-        }
-
-        void OnLoginFinished(Exception error)
-        {
-            btnLogin.interactable = true;
-            GameUI.Instance.QuitLoadingUI();
-
             if (error == null)
             {
-                OnLoginSucceed();
+                return;
             }
-            else
-            {
-                OnLoginFailed(error);
-            }
-        }
 
-        void OnLoginSucceed()
-        {
-            if (togRemember != null && togRemember.isOn)
-            {
-                manager.SetAccountConfig(iptUser.text, iptPwd.text);
-            }
-            manager.FinishLogin();
-        }
-
-        void OnLoginFailed(Exception error)
-        {
+            btnLogin.interactable = true;
             texMsg.text = error.Message;
         }
     }
