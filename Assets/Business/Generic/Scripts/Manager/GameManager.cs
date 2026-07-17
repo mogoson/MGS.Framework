@@ -10,23 +10,16 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using MGS.MessageBus;
-
 namespace Business.Generic
 {
     public static class GameManager
     {
-        public static IApplicationManager Application { get; }
+        public static IApplicationManager Application { get { return ApplicationManager.Instance; } }
 
-        public static IMessageBus MessageBus { get; }
+        public static IBusinessSceneManager SceneManager { get { return BusinessSceneManager.Instance; } }
 
-        public static IBusinessSceneManager SceneManager { get; }
+        public static IGenericUIManager UIManager { get { return GenericUIManager.Instance; } }
 
-        static GameManager()
-        {
-            Application = new ApplicationManager();
-            MessageBus = new MessageBus();
-            SceneManager = new BusinessSceneManager();
-        }
+        static GameManager() { }
     }
 }

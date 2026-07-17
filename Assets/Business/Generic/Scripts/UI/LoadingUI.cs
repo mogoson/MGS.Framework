@@ -10,24 +10,23 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace Business.Generic
 {
-    public class LoadingUI : MonoBehaviour
+    public class LoadingUI : BaseUI<string>
     {
-        [SerializeField] Text texMsg;
-        [SerializeField] Image imgIcon;
+        public Text texMessage;
+        public Image imgProgress;
 
-        public void Refresh(string message)
+        public override void Refresh(string message)
         {
-            texMsg.text = message;
+            texMessage.text = message;
         }
 
         public void Refresh(float progress)
         {
-            imgIcon.fillAmount = progress;
+            imgProgress.fillAmount = progress;
         }
     }
 }

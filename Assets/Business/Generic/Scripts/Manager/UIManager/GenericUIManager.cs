@@ -1,35 +1,26 @@
 /*************************************************************************
  *  Copyright © 2026 Mogoson All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  PlayerConfig.cs
+ *  File         :  GenericUIManager.cs
  *  Description  :  Default.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  1.0.0
- *  Date         :  06/26/2026
+ *  Date         :  07/11/2026
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using System;
+using MGS.MonoUI;
 
 namespace Business.Generic
 {
-    /// <summary>
-    /// Player config.
-    /// </summary>
-    [Serializable]
-    public class PlayerConfig
+    class GenericUIManager : MonoUIManager, IGenericUIManager
     {
-        public AccountConfig account;
-    }
+        public static GenericUIManager Instance { private set; get; }
 
-    /// <summary>
-    /// Player account config.
-    /// </summary>
-    [Serializable]
-    public struct AccountConfig
-    {
-        public string username;
-        public string password;
+        private void Awake()
+        {
+            Instance = this;
+        }
     }
 }

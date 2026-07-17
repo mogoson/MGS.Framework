@@ -1,40 +1,35 @@
 /*************************************************************************
  *  Copyright © 2026 Mogoson All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  ApplicationManager.cs
+ *  File         :  ApplicationMessager.cs
  *  Description  :  Default.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  1.0.0
- *  Date         :  06/28/2026
+ *  Date         :  07/17/2026
  *  Description  :  Initial development version.
  *************************************************************************/
 
 using Framework;
-using MGS.MonoAgent;
-using MGS.Singleton;
+using UnityEngine;
 
 namespace Business.Generic
 {
-    class ApplicationManager : Singleton<ApplicationManager>, IApplicationManager
+    class ApplicationMessager : MonoBehaviour
     {
-        ApplicationManager()
+        private void OnApplicationFocus(bool focus)
         {
-            new MonoAgent<ApplicationMessager>();
+            FrameworkEntry.MessageBus.Spread(new AppFocusMessage { focus = focus });
         }
 
-        public void AskQuit()
+        private void OnApplicationPause(bool pause)
         {
-            FrameworkEntry.MessageBus.Spread(new AppQuitAskMessage());
+            FrameworkEntry.MessageBus.Spread(new AppPauseMessage { pause = pause });
         }
 
-        public void Quit()
+        private void OnApplicationQuit()
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.ExitPlaymode();
-#else
-            UnityEngine.Application.Quit();
-#endif
+            FrameworkEntry.MessageBus.Spread(new AppQuitMessage());
         }
     }
 }

@@ -18,5 +18,10 @@ namespace Business.Generic
     public class PlayerData
     {
         public string UserName { set; get; }
+
+        public void Clear()
+        {
+            UserName = null;
+        }
     }
 }

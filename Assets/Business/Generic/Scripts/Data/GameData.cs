@@ -10,11 +10,8 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using System;
 using MGS.JsonAvatar;
-using MGS.StreamingIO;
 using MGS.StreamingPorter;
-using UnityEngine;
 
 namespace Business.Generic
 {
@@ -22,44 +19,19 @@ namespace Business.Generic
     {
         public static PlayerData PlayerData { get; }
 
-        public static GameConfig GameConfig { get; }
+        public static IJsonAvatar<GameConfig> GameConfig { get; }
 
         public static IJsonAvatar<PlayerConfig> PlayerConfig { get; }
 
         static GameData()
         {
             PlayerData = new PlayerData();
-            GameConfig = ReadConfig<GameConfig>("GameConfig.json");
-            PlayerConfig = new JsonAvatar<PlayerConfig>(GetConfigFile("PlayerConfig.json"));
-        }
 
-        #region Config
-        public static string GetConfigFile(string fileName)
-        {
-            return StreamingPorter.GetDestPath($"Config/{fileName}");
-        }
+            var filePath = StreamingPorter.GetDestPath("Config/GameConfig.json");
+            GameConfig = new JsonAvatar<GameConfig>(filePath);
 
-        public static string GetConfigName(string fileName)
-        {
-            return StreamingPorter.GetFileName($"Config/{fileName}");
+            filePath = StreamingPorter.GetDestPath("Config/PlayerConfig.json");
+            PlayerConfig = new JsonAvatar<PlayerConfig>(filePath);
         }
-
-        public static T ReadConfig<T>(string fileName)
-        {
-            fileName = GetConfigName(fileName);
-            var json = PersistentIO.ReadAllText(fileName, out Exception error);
-            if (error != null)
-            {
-                Debug.LogException(error);
-                return default;
-            }
-            var config = JsonConvert.FromJson<T>(json, out error);
-            if (error != null)
-            {
-                Debug.LogException(error);
-            }
-            return config;
-        }
-        #endregion
     }
 }

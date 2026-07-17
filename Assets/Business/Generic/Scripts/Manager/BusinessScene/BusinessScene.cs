@@ -16,6 +16,9 @@ namespace Business.Generic
     {
         Launch,
         Login,
-        Main,
+        Lobby,
+        MovieRoom,
+        MusicRoom,
+        PaintingRoom
     }
 }

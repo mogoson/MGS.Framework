@@ -12,16 +12,19 @@
 
 using System;
 using System.Collections;
-using MGS.MonoAgent;
+using Framework;
+using MGS.Singleton;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Business.Generic
 {
-    internal class BusinessSceneManager : MonoAgent, IBusinessSceneManager
+    class BusinessSceneManager : Singleton<BusinessSceneManager>, IBusinessSceneManager
     {
         public BusinessScene Scene { private set; get; }
         Coroutine coroutine;
+
+        BusinessSceneManager() { }
 
         public void EnterScene(BusinessScene scene, Action<Exception> finished = null)
         {
@@ -37,12 +40,12 @@ namespace Business.Generic
                 return;
             }
 
-            coroutine = StartCoroutine(EnterSceneAsync(scene, finished));
+            coroutine = FrameworkEntry.Coroutine.StartCoroutine(EnterSceneAsync(scene, finished));
         }
 
         IEnumerator EnterSceneAsync(BusinessScene scene, Action<Exception> finished = null)
         {
-            GameManager.MessageBus.Spread(new EnterSceneStartMessage { scene = scene });
+            FrameworkEntry.MessageBus.Spread(new EnterSceneStartMessage { scene = scene });
             if (Scene != BusinessScene.Launch)
             {
                 var sceneName = Scene.ToString();
@@ -51,9 +54,10 @@ namespace Business.Generic
                 while (!aperation.isDone)
                 {
                     message.progress = aperation.progress * 0.5f;
-                    GameManager.MessageBus.Spread(message);
+                    FrameworkEntry.MessageBus.Spread(message);
                     yield return null;
                 }
+                FrameworkEntry.UnloadUnusedAssets();
             }
 
             Scene = scene;
@@ -65,7 +69,7 @@ namespace Business.Generic
                 while (!aperation.isDone)
                 {
                     message.progress = 0.5f + aperation.progress * 0.5f;
-                    GameManager.MessageBus.Spread(message);
+                    FrameworkEntry.MessageBus.Spread(message);
                     yield return null;
                 }
                 var current = SceneManager.GetSceneByName(sceneName);
@@ -73,7 +77,7 @@ namespace Business.Generic
             }
 
             coroutine = null;
-            GameManager.MessageBus.Spread(new EnterSceneFinishedMessage { scene = scene });
+            FrameworkEntry.MessageBus.Spread(new EnterSceneFinishedMessage { scene = scene });
             finished?.Invoke(null);
         }
     }
