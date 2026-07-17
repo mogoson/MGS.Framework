@@ -1,7 +1,7 @@
 /*************************************************************************
  *  Copyright © 2026 Mogoson All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  LaunchManager.cs
+ *  File         :  LaunchBusiness.cs
  *  Description  :  Default.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
@@ -11,46 +11,26 @@
  *************************************************************************/
 
 using System;
-using Business.Generic;
 using MGS.StreamingPorter;
 using UnityEngine;
 
 namespace Business.Launch
 {
-    internal class LaunchManager : MonoBehaviour
+    class LaunchBusiness : MonoBehaviour
     {
-        public event Action OnStartEvent;
-        public event Action<Exception> OnFinishEvent;
-
-        private void Start()
+        public void LaunchAsync(Action<Exception> finished)
         {
-            OnStartEvent?.Invoke();
-            Initialize(Finished);
-            void Finished(Exception error)
-            {
-                OnFinishEvent?.Invoke(error);
-                Destroy(gameObject);
-                if (error == null)
-                {
-                    GameManager.SceneManager.EnterScene(BusinessScene.Login);
-                }
-            }
-        }
-
-        void Initialize(Action<Exception> finished)
-        {
-            TransportAsset(finished);
+            TransportAsync(finished);
 
             //Do more things...
         }
 
         #region Transport
-        void TransportAsset(Action<Exception> finished)
+        void TransportAsync(Action<Exception> finished)
         {
             StreamingPorter.TransportAsync(OnTransport);
             void OnTransport(string version, Exception error)
             {
-                GameUI.Instance.QuitLoadingUI();
                 if (error == null)
                 {
                     if (!string.IsNullOrEmpty(version))
