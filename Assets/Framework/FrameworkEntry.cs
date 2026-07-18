@@ -84,6 +84,12 @@ namespace Framework
             WebCameraCapture, Capture the web camera texture.
             CameraDisplay, Display the texture that capture from camera.
             CaptureUtility, Screenshot and Camerashot and SaveAsPNG.
+
+        MGS.Barcode
+            BarcodeGenerator, Editor window to generator barcode image.
+            BarcodeUtility, Encode string content to barcode texture and Decode content from barcode texture.
+            BarcodeScanner, Capture camera texture and decode to string content.
+            BarcodeDisplay, Encode string content to barcode texture and display by RawImage.
          */
         #endregion
 
