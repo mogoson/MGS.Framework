@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "735585cde64c0fa0bb93ef59b62f402141ed861e"
     },
+    "com.mgs.capture": {
+      "version": "https://github.com/mogoson/MGS.Capture.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "32ced50744800ec3930f856647d2d08cc8675fcd"
+    },
     "com.mgs.ioutility": {
       "version": "https://github.com/mogoson/MGS.IOUtility.git?path=/Assets",
       "depth": 0,

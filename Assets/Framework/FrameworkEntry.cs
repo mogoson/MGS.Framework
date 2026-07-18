@@ -77,6 +77,16 @@ namespace Framework
         public static ICoroutineAgent Coroutine { get { return CoroutineAgent.Instance; } }
         #endregion
 
+        #region Capture
+        /*
+        MGS.Capture
+            CameraCapture, Capture camera texture.
+            WebCameraCapture, Capture the web camera texture.
+            CameraDisplay, Display the texture that capture from camera.
+            CaptureUtility, Screenshot and Camerashot and SaveAsPNG.
+         */
+        #endregion
+
         #region UI
         /*
         MGS.MonoUI

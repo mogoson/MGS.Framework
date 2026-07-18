@@ -2,6 +2,7 @@
   "dependencies": {
     "com.mgs.adaptive": "https://github.com/mogoson/MGS.Adaptive.git?path=/Assets",
     "com.mgs.assistant": "https://github.com/mogoson/MGS.Assistant.git?path=/Assets",
+    "com.mgs.capture": "https://github.com/mogoson/MGS.Capture.git?path=/Assets",
     "com.mgs.ioutility": "https://github.com/mogoson/MGS.IOUtility.git?path=/Assets",
     "com.mgs.jsonavatar": "https://github.com/mogoson/MGS.JsonAvatar.git?path=/Assets",
     "com.mgs.messagebus": "https://github.com/mogoson/MGS.MessageBus.git?path=/Assets",
