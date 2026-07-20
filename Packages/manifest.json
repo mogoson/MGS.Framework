@@ -12,6 +12,8 @@
     "com.mgs.singleton": "https://github.com/mogoson/MGS.Singleton.git?path=/Assets",
     "com.mgs.streamingio": "https://github.com/mogoson/MGS.StreamingIO.git?path=/Assets",
     "com.mgs.streamingporter": "https://github.com/mogoson/MGS.StreamingPorter.git?path=/Assets",
+    "com.mgs.textsignal": "https://github.com/mogoson/MGS.TextSignal.git?path=/Assets",
+    "com.mgs.texttrack": "https://github.com/mogoson/MGS.TextTrack.git?path=/Assets",
     "com.unity.collab-proxy": "2.3.1",
     "com.unity.ide.rider": "3.0.28",
     "com.unity.ide.visualstudio": "2.0.22",

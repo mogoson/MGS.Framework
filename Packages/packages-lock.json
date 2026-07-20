@@ -86,6 +86,20 @@
       "dependencies": {},
       "hash": "96e7b69e7f85e47458f22226e3d8535f400a71c7"
     },
+    "com.mgs.textsignal": {
+      "version": "https://github.com/mogoson/MGS.TextSignal.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "eeafb5d47776443a952b474d1e980381fabe33a2"
+    },
+    "com.mgs.texttrack": {
+      "version": "https://github.com/mogoson/MGS.TextTrack.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "cce3e4e0411d108a5595b7c63056908d9b059d95"
+    },
     "com.unity.collab-proxy": {
       "version": "2.3.1",
       "depth": 0,

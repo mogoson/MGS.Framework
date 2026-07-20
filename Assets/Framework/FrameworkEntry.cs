@@ -101,6 +101,19 @@ namespace Framework
         */
         #endregion
 
+        #region Timeline
+        /*
+        MGS.TextTrack
+            TextTrack
+            TextClip
+            TextBehaviour
+
+        MGS.TextSignal
+            TextSignalEmitter
+            TextSignalReceiver
+        */
+        #endregion
+
         #region Message
         /*
         MGS.MessageBus
